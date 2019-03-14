@@ -11,11 +11,8 @@ $(document).ready(function () {
     var crystal3 = $("<img>");
 
     //CREATE A RANDOM  NUMBER TO TRY TO MATCH
-    var ranNum = [Math.floor(Math.random() * 100)];
-
-    //SET NUMBER TEXT INTO PLACE
-    $(".randNumb").text(ranNum);
-    console.log(ranNum);//this works
+    var ranNum = Math.floor(Math.random() * 100);
+    console.log(ranNum);
 
      //SET IMG CLASSES AND SOURCES
      crystal1.attr("src", "assets/images/crystal.jpg");
@@ -50,11 +47,17 @@ $(document).ready(function () {
     //SET IF STATEMENT
     if (userGuess === ranNum) {
         wins++;
-        ranNum = [Math.floor(Math.random() * 100)];
     } else if(userGuess > ranNum) {
         losses++;
-        ranNum = [Math.floor(Math.random() * 100)];
+    } else {
+        userGuess += userGuess;
     }
+
+     //SET NUMBER TEXT INTO PLACE
+     $(".randNumb").text("Try to get to this number: " + ranNum);
+     $(".yourNum").text("Your Total: " + userGuess);
+     $(".wins").text("wins: " + wins);
+     $(".losses").text("losses: " + losses);
 
      console.log(wins);
      console.log(losses);
