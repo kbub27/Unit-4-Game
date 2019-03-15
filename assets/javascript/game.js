@@ -94,29 +94,6 @@ $(document).ready(function () {
         } 
     })
 
-
-    $(".crsytal").click(function () {
-        
-    
-    //SET IF STATEMENT
-    if (userGuess === ranNum) {
-        wins++;
-        userGuess = 0;
-        ranNum = Math.floor(Math.random() * 100);
-        $(".wins").text("wins: " + wins);
-        $(".randNumb").text("Try to get to this number: " + ranNum);
-    } else if(userGuess > ranNum) {
-        losses++;
-        userGuess = 0;
-        ranNum = Math.floor(Math.random() * 100);
-        $(".losses").text("losses: " + losses);
-        $(".randNumb").text("Try to get to this number: " + ranNum);
-    } else {
-        userGuess += userGuess;
-    }
-
-});
-
      console.log(wins);
      console.log(losses);
 })
