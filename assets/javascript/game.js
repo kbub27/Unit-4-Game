@@ -22,6 +22,16 @@ $(document).ready(function () {
      crystal1.addClass("crystal1");
      crystal2.addClass("crystal35");
      crystal3.addClass("crystal12");
+     crystal1.addClass("crystal");
+     crystal2.addClass("crystal");
+     crystal3.addClass("crystal");
+
+     
+     //SET NUMBER TEXT INTO PLACE
+     $(".randNumb").text("Try to get to this number: " + ranNum);
+     $(".yourNum").text("Your Total: " + userGuess);
+     $(".wins").text("wins: " + wins);
+     $(".losses").text("losses: " + losses);
 
      //APPEND DIVS
      $("#imgDiv").append(crystal1);
@@ -31,33 +41,81 @@ $(document).ready(function () {
      // SET ON CLICK FUNCTIONALITY
     $(crystal1).click(function () {
         userGuess += 1;
-        console.log(userGuess);
+        $(".yourNum").text("Your Total: " + userGuess);
+
+        if (userGuess === ranNum) {
+            wins++;
+            userGuess = 0;
+            ranNum = Math.floor(Math.random() * 100);
+            $(".wins").text("wins: " + wins);
+            $(".randNumb").text("Try to get to this number: " + ranNum);
+        } else if(userGuess > ranNum) {
+            losses++;
+            userGuess = 0;
+            ranNum = Math.floor(Math.random() * 100);
+            $(".losses").text("losses: " + losses);
+            $(".randNumb").text("Try to get to this number: " + ranNum);
+        }
     });
 
     $(crystal2).click(function () {
         userGuess += 35;
-        console.log(userGuess);
+        $(".yourNum").text("Your Total: " + userGuess);
+        if (userGuess === ranNum) {
+            wins++;
+            userGuess = 0;
+            ranNum = Math.floor(Math.random() * 100);
+            $(".wins").text("wins: " + wins);
+            $(".randNumb").text("Try to get to this number: " + ranNum);
+        } else if(userGuess > ranNum) {
+            losses++;
+            userGuess = 0;
+            ranNum = Math.floor(Math.random() * 100);
+            $(".losses").text("losses: " + losses);
+            $(".randNumb").text("Try to get to this number: " + ranNum);
+        }
     })
 
     $(crystal3).click(function () {
         userGuess += 12;
-        console.log(userGuess);
+        $(".yourNum").text("Your Total: " + userGuess);
+        if (userGuess === ranNum) {
+            wins++;
+            userGuess = 0;
+            ranNum = Math.floor(Math.random() * 100);
+            $(".wins").text("wins: " + wins);
+            $(".randNumb").text("Try to get to this number: " + ranNum);
+        } else if(userGuess > ranNum) {
+            losses++;
+            userGuess = 0;
+            ranNum = Math.floor(Math.random() * 100);
+            $(".losses").text("losses: " + losses);
+            $(".randNumb").text("Try to get to this number: " + ranNum);
+        } 
     })
 
+
+    $(".crsytal").click(function () {
+        
+    
     //SET IF STATEMENT
     if (userGuess === ranNum) {
         wins++;
+        userGuess = 0;
+        ranNum = Math.floor(Math.random() * 100);
+        $(".wins").text("wins: " + wins);
+        $(".randNumb").text("Try to get to this number: " + ranNum);
     } else if(userGuess > ranNum) {
         losses++;
+        userGuess = 0;
+        ranNum = Math.floor(Math.random() * 100);
+        $(".losses").text("losses: " + losses);
+        $(".randNumb").text("Try to get to this number: " + ranNum);
     } else {
         userGuess += userGuess;
     }
 
-     //SET NUMBER TEXT INTO PLACE
-     $(".randNumb").text("Try to get to this number: " + ranNum);
-     $(".yourNum").text("Your Total: " + userGuess);
-     $(".wins").text("wins: " + wins);
-     $(".losses").text("losses: " + losses);
+});
 
      console.log(wins);
      console.log(losses);
