@@ -46,7 +46,7 @@ $(document).ready(function () {
         if (userGuess === ranNum) {
             wins++;
             userGuess = 0;
-            ranNum = Math.floor(Math.random() * 100);
+            ranNum = Math.floor(Math.random() * 100 + 1);
             $(".wins").text("wins: " + wins);
             $(".randNumb").text("Try to get to this number: " + ranNum);
         } else if(userGuess > ranNum) {

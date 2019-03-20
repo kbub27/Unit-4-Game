@@ -6,7 +6,9 @@ body {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    background-image: url();
+    background-image: url(../images/crystals1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 h1 {
